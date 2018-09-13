@@ -45,19 +45,21 @@ import java.util.Date;
 @Service
 public class  InfrequentBehaviourFilterServiceImpl extends DefaultParameterAwarePlugin implements InfrequentBehaviourFilterService {
 
-    private final static String LPSOLVE55 = "lpsolve55.dll";
-    private final static String LPSOLVE55J = "lpsolve55j.dll";
-    private final static String LIBLPSOLVE55 = "liblpsolve55.jnilib";
-    private final static String LIBLPSOLVE55J = "liblpsolve55j.jnilib";
+    private final static String WIN_LIBLPSOLVE55 = "lpsolve55.dll";
+    private final static String WIN_LIBLPSOLVE55J = "lpsolve55j.dll";
+    private final static String MACOS_LIBLPSOLVE55 = "liblpsolve55.jnilib";
+    private final static String MACOS_LIBLPSOLVE55J = "liblpsolve55j.jnilib";
+    private final static String LINUX_LIBLPSOLVE55 = "liblpsolve55.so";
+    private final static String LINUX_LIBLPSOLVE55J = "liblpsolve55j.so";
 
 //    static {
 //        try {
 //            if(System.getProperty("os.name").startsWith("Windows")) {
-//                System.loadLibrary(LPSOLVE55);
-//                System.loadLibrary(LPSOLVE55J);
+//                System.loadLibrary(WIN_LIBLPSOLVE55);
+//                System.loadLibrary(WIN_LIBLPSOLVE55J);
 //            }else {
-//                System.loadLibrary(LIBLPSOLVE55);
-//                System.loadLibrary(LIBLPSOLVE55J);
+//                System.loadLibrary(MACOS_LIBLPSOLVE55);
+//                System.loadLibrary(MACOS_LIBLPSOLVE55J);
 //            }
 //        } catch (UnsatisfiedLinkError e) {
 //            loadFromJar();
@@ -68,11 +70,14 @@ public class  InfrequentBehaviourFilterServiceImpl extends DefaultParameterAware
         // we need to put both DLLs to temp dir
         String path = "lib/";
         if(System.getProperty("os.name").startsWith("Windows")) {
-            loadLibWin(path, LPSOLVE55);
-            loadLibWin(path, LPSOLVE55J);
-        }else {
-            loadLibMac(path, LIBLPSOLVE55);
-            loadLibMac(path, LIBLPSOLVE55J);
+            loadLibWin(path, WIN_LIBLPSOLVE55);
+            loadLibWin(path, WIN_LIBLPSOLVE55J);
+        } else if (System.getProperty("os.name").toLowerCase().equals("linux")) {
+			loadLibMac(path, LINUX_LIBLPSOLVE55);
+			loadLibMac(path, LINUX_LIBLPSOLVE55J);
+		} else {
+            loadLibMac(path, MACOS_LIBLPSOLVE55);
+            loadLibMac(path, MACOS_LIBLPSOLVE55J);
         }
     }
 
@@ -101,7 +106,8 @@ public class  InfrequentBehaviourFilterServiceImpl extends DefaultParameterAware
             IOUtils.copy(in, out);
             in.close();
             out.close();
-        } catch (Exception e) {
+            fileOut.setExecutable(true, false);
+       } catch (Exception e) {
             throw new RuntimeException("Failed to load required JNILIB", e);
         }
     }
@@ -109,11 +115,11 @@ public class  InfrequentBehaviourFilterServiceImpl extends DefaultParameterAware
     @Override
     public XLog filterLog(XLog log) {
         if(System.getProperty("os.name").startsWith("Windows")) {
-            if(!(new File(LPSOLVE55)).exists()) {
+            if(!(new File(WIN_LIBLPSOLVE55)).exists()) {
                 loadFromJar();
             }
         }else {
-            if(!(new File(LIBLPSOLVE55)).exists()) {
+            if(!(new File(MACOS_LIBLPSOLVE55)).exists()) {
                 loadFromJar();
             }
         }
