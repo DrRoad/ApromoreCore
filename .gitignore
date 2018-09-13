@@ -22,5 +22,7 @@ Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE
 
 # Site-specific configuration
 **/.settings/*
-*.project
+**/.project
 *.classpath
+**/nb-configuration.xml
+
