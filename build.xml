@@ -700,6 +700,8 @@
         <copy file="Supplements/liblpsolve55d.lib" tofile="${dir-virgo}/liblpsolve55d.lib" overwrite="true"/>
         <copy file="Supplements/liblpsolve55j.jnilib" tofile="${dir-virgo}/liblpsolve55j.jnilib" overwrite="true"/>
         <copy file="Supplements/lpsolve55.lib" tofile="${dir-virgo}/lpsolve55.lib" overwrite="true"/>
+        <copy file="Supplements/liblpsolve55.so" tofile="${dir-virgo}/liblpsolve55.so" overwrite="true"/>
+        <copy file="Supplements/liblpsolve55j.so" tofile="${dir-virgo}/liblpsolve55j.so" overwrite="true"/>
 
         <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true">
             <fileset dir="${dir-osgi}">
@@ -818,7 +820,7 @@
 
     <target name="install-sample-data">
         <java jar="Supplements/cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
-            <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
+            <arg value="-manager"/> <arg value="http://vm-win7:9000/manager/services/manager"/>
 
             <!-- Configurable BPMN samples -->
             <arg value="-from"/>    <arg value="Apromore-Extras/bpmncmap/src/test/resources"/>
@@ -881,7 +883,7 @@
 
     <target name="install-comparison-data">
         <java jar="Supplements/cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
-            <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
+            <arg value="-manager"/> <arg value="http://vm-win7:9000/manager/services/manager"/>
 
             <!-- Model to model -->
             <arg value="-from"/>    <arg value="Supplements/samples/model-to-model"/>
