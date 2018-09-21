@@ -222,7 +222,7 @@
 
         <include name="Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
 
-        <!-- BPMNMiner renamed ~BPMNMiner elsewhere as a workaround for its dependency on IBPStruct
+        <!-- BPMNMiner renamed zz-BPMNMiner elsewhere as a workaround for its dependency on IBPStruct
         <include name="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar"/>
         <include name="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar"/>
         -->
@@ -244,7 +244,7 @@
 
         <include name="IBPStruct-Logic/target/ibpstruct-logic-1.1.jar"/>
         <include name="IBPStruct-Portal-Plugin/target/ibpstruct-portal-plugin-1.1.jar"/>
-        <!-- ibpstruct-editor-plugin renamed ~ibpstruct-editor-plugin elsewhere as a workaround for its dependency upon ibpstruct-logic
+        <!-- ibpstruct-editor-plugin renamed zz-ibpstruct-editor-plugin elsewhere as a workaround for its dependency upon ibpstruct-logic
         <include name="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war"/>
         -->
 
@@ -278,7 +278,7 @@
         <include name="PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
         <include name="PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
 
-        <!-- logfilter-editor-plugin renamed ~logfilter-editor-plugin elsewhere as a workaround for its dependency upon logfilter-logic
+        <!-- logfilter-editor-plugin renamed zz-logfilter-editor-plugin elsewhere as a workaround for its dependency upon logfilter-logic
         <include name="Apromore-Plugins/plugin-editor/logfilter/target/logfilter-editor-plugin-1.1.war"/>
         -->
 
@@ -499,9 +499,9 @@
         <delete file="${dir-virgo}/pickup/similarity-clusters-portal-plugin-1.1.jar"/>
         <delete file="${dir-virgo}/pickup/stagemining-logic-1.1.jar"/>
         <delete file="${dir-virgo}/pickup/stagemining-portal-plugin-1.1.jar"/>
-        <delete file="${dir-virgo}/pickup/~ibpstruct-editor-plugin-1.1.war"/>
-        <delete file="${dir-virgo}/pickup/~gbebop-editor-plugin-1.1.war"/>
-        <delete file="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
+        <delete file="${dir-virgo}/pickup/zz-ibpstruct-editor-plugin-1.1.war"/>
+        <delete file="${dir-virgo}/pickup/zz-gbebop-editor-plugin-1.1.war"/>
+        <delete file="${dir-virgo}/pickup/zz-gbprove-editor-plugin-1.1.war"/>
 
         <delete file="${dir-virgo}/pickup/org.eclipse.virgo.apps.repository_3.6.4.RELEASE.par"/>
         <delete file="${dir-virgo}/pickup/org.eclipse.virgo.management.console_3.6.4.RELEASE.jar"/>
@@ -578,14 +578,14 @@
         </copy>
 
         <!-- Force the BPMN Miner plugin to be alphabetically after the iBPStruct plugin it depends upon -->
-        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-logic-1.1.jar"/>
-        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-portal-plugin-1.1.jar"/>
+        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-logic-1.1.jar"/>
+        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-portal-plugin-1.1.jar"/>
 
         <!-- Force the editor plugins to be alphabetically after the logic plugins they depends upon -->
-        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~ibpstruct-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~metrics-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbebop-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-ibpstruct-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-metrics-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbebop-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbprove-editor-plugin-1.1.war"/>
 
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
             <fileset dir="${dir-annotation}">
@@ -648,17 +648,17 @@
         </copy>
 
         <!-- Force the BPMN Miner plugin to be alphabetically after the iBPStruct plugin it depends upon -->
-        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-logic-1.1.jar"/>
-        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-portal-plugin-1.1.jar"/>
+        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-logic-1.1.jar"/>
+        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-portal-plugin-1.1.jar"/>
 
         <!-- Force the editor plugins to be alphabetically after the logic plugins they depends upon -->
-        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~ibpstruct-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~metrics-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbebop-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-ibpstruct-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-metrics-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbebop-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbprove-editor-plugin-1.1.war"/>
 
         <!-- After creating the PQL tables in MySQL, uncomment this component to enable PQL indexing
-        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~pql-indexer-portal-plugin-1.1.jar"/>
+        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/zz-pql-indexer-portal-plugin-1.1.jar"/>
         -->
 
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
@@ -736,17 +736,17 @@
         </copy>
 
         <!-- Force the BPMN Miner plugin to be alphabetically after the iBPStruct plugin it depends upon -->
-        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-logic-1.1.jar"/>
-        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-portal-plugin-1.1.jar"/>
+        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-logic-1.1.jar"/>
+        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/zz-bpmnminer-portal-plugin-1.1.jar"/>
 
         <!-- Force the editor plugins to be alphabetically after the logic plugins they depends upon -->
-        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~ibpstruct-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~metrics-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbebop-editor-plugin-1.1.war"/>
-        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-ibpstruct-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-metrics-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbebop-editor-plugin-1.1.war"/>
+        <copy file="Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/zz-gbprove-editor-plugin-1.1.war"/>
 
         <!-- After creating the PQL tables in MySQL, uncomment this component to enable PQL indexing
-        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~pql-indexer-portal-plugin-1.1.jar"/>
+        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/zz-pql-indexer-portal-plugin-1.1.jar"/>
         -->
 
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
